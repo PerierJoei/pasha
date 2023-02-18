@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function check_pass(pswd){
+            if (pswd.length > 8){
+                console.log('error У вас больше 8 символов')
+            }else if (pswd.length < 8){
+                console.log('error У вас меньше 8 символов')
+            }else if (pswd.toLowerCase()==pswd){
+                console.log('error Добавьте заглавную букву')
+            }else if (pswd==pswd.toUpperCase()){
+                console.log('error Добавьте строчные символы')
+            }else if (/[0-9]/.test(pswd)==false){
+                console.log('error Добавьте числа')
+            }else if (/[* - #]/.test(pswd)==false){
+                console.log('error Добавьте спеиальные символы')
+            }else {
+                console.log('Пароль верный')
+            }
+            
+        }
+        check_pass(prompt('Введите пароль'))
+    </script>
+</body>
+</html>
